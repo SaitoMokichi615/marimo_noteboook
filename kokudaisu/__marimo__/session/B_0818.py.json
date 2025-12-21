@@ -5,8 +5,21 @@
   },
   "cells": [
     {
-      "id": "MJUe",
-      "code_hash": "a45fc55aff5be52823852e734ebf5be2",
+      "id": "Hbol",
+      "code_hash": "4d12cc02d68bcc6220bdcb16f3d6029e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yRzI",
+      "code_hash": "57e71fac3b3871720edc72d916501e4b",
       "outputs": [
         {
           "type": "data",
@@ -18,8 +31,8 @@
       "console": []
     },
     {
-      "id": "vblA",
-      "code_hash": "00dd7b78191d7a81de2df476f4347131",
+      "id": "fMqd",
+      "code_hash": "4b77e6cd3ee4382b70b95aef810ce980",
       "outputs": [
         {
           "type": "data",
@@ -51,45 +64,6 @@
           "type": "data",
           "data": {
             "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Python\u306e\u4ee3\u6570\u8a08\u7b97\u30e9\u30a4\u30d6\u30e9\u30ea\u3001Sympy\u3067\u3082\u691c\u7b97\u3059\u308b\u3002</span></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Hstk",
-      "code_hash": "cb69d73f5c7c7c31b3acdcc2f73e2ea1",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\n\\begin{aligned}\n\\frac{d}{dt}\\tan^{-1}t &amp;= \\frac{1}{1+t^2} \\\\\n\\tan^{-1}t &amp;= \\int \\frac{1}{1+t^2}\\,dt + C\n\\end{aligned}\n||]</marimo-tex></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "nWHF",
-      "code_hash": "0c511205dbc7127e6fdce99d8cdce5b9",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\n\\left\\{\n\\begin{aligned}\n\\frac{d}{dt}\\tan^{-1}t &amp;= \\frac{1}{1+t^2} \\\\\n\\tan^{-1}t &amp;= \\int \\frac{1}{1+t^2}\\,dt + C\n\\end{aligned}\n\\right.\n||]</marimo-tex></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Hbol",
-      "code_hash": "4d12cc02d68bcc6220bdcb16f3d6029e",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
           }
         }
       ],
@@ -135,6 +109,32 @@
       "id": "emfo",
       "code_hash": "3c82b45159e663dfbb17faea2a312568",
       "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "cb69d73f5c7c7c31b3acdcc2f73e2ea1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\n\\begin{aligned}\n\\frac{d}{dt}\\tan^{-1}t &amp;= \\frac{1}{1+t^2} \\\\\n\\tan^{-1}t &amp;= \\int \\frac{1}{1+t^2}\\,dt + C\n\\end{aligned}\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "0c511205dbc7127e6fdce99d8cdce5b9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\n\\left\\{\n\\begin{aligned}\n\\frac{d}{dt}\\tan^{-1}t &amp;= \\frac{1}{1+t^2} \\\\\n\\tan^{-1}t &amp;= \\int \\frac{1}{1+t^2}\\,dt + C\n\\end{aligned}\n\\right.\n||]</marimo-tex></span>"
+          }
+        }
+      ],
       "console": []
     }
   ]

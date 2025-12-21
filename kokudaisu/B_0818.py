@@ -11,9 +11,9 @@ def _():
     return mo, sy
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md("""
+    mo.md(r"""
     ## B.818
     次の関数を微分せよ。
 
@@ -24,9 +24,9 @@ def _(mo):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md("""
+    mo.md(r"""
     $$
     g(t) = \frac{1}{t^2+1}
     $$
