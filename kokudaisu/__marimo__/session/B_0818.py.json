@@ -1,0 +1,141 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.18.4"
+  },
+  "cells": [
+    {
+      "id": "MJUe",
+      "code_hash": "a45fc55aff5be52823852e734ebf5be2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"b818\">B.818</h2>\n<span class=\"paragraph\">\u6b21\u306e\u95a2\u6570\u3092\u5fae\u5206\u305b\u3088\u3002</span>\n<marimo-tex class=\"arithmatex\">||[\nf(x) = \\int_x^{2x+1}\\frac{1}{t^2+1}dt\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "00dd7b78191d7a81de2df476f4347131",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\ng(t) = \\frac{1}{t^2+1}\n||]</marimo-tex><marimo-tex class=\"arithmatex\">||[\nG(t) = \\int g(t)dt\n||]</marimo-tex><span class=\"paragraph\">\u3068\u304a\u304f\u3002</span>\n<marimo-tex class=\"arithmatex\">||[\nf(x) = \\int_{x}^{2x+1}g(t)dt = \\Big[ G(t) \\Big]_{x}^{2x+1} = G(2x+1) -G(x)\n||]</marimo-tex><span class=\"paragraph\">\u3088\u3063\u3066\u3001<marimo-tex class=\"arithmatex\">||(G'(x) = g(x)||)</marimo-tex>\u306b\u6ce8\u610f\u3059\u308b\u3068\u3001</span>\n<marimo-tex class=\"arithmatex\">||[\n f'(x) = 2G'(2x+1) -G'(x)\n||]</marimo-tex><marimo-tex class=\"arithmatex\">||[\n= 2g(2x+1)-g(x)\n||]</marimo-tex><marimo-tex class=\"arithmatex\">||[\n= \\frac{ 2}{(2x+1)^2+1}-\\frac{1}{x^2+1}\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "e6ae977d56292afe2a30c4a38dfd0423",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"_1\">\u88dc\u8db3</h2>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(G(t)||)</marimo-tex>\u306e\u6b63\u4f53\u306f<strong>\u9006\u4e09\u89d2\u95a2\u6570</strong> <marimo-tex class=\"arithmatex\">||(\\tan^{-1}t||)</marimo-tex></span>\n<marimo-tex class=\"arithmatex\">||[\n\\frac{d}{dt}\\tan^{-1}t = \\frac{1}{1+t^2},\\;\n\\tan^{-1}t = \\int \\frac{1}{1+t^2}\\,dt + C\n||]</marimo-tex><span class=\"paragraph\">\u7a4d\u5206\u306e\u5b9a\u7406\u3088\u308a\u3001</span>\n<marimo-tex class=\"arithmatex\">||[\nf(x) = \\int_x^{2x+1}\\frac{1}{1+t^2}d t = \\Big[ \\tan^{-1}t\\Big]_x^{2x+1}\n||]</marimo-tex><marimo-tex class=\"arithmatex\">||[\n= \\tan^{-1}(2x+1) -\\tan^{-1}x\n||]</marimo-tex><span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(f(x)||)</marimo-tex>\u3092<marimo-tex class=\"arithmatex\">||(x||)</marimo-tex>\u3067\u5fae\u5206\u3059\u308b\u3068\u3001</span>\n<marimo-tex class=\"arithmatex\">||[\nf'(x) = \\left(\\tan^{-1}(2x+1) \\right)'(2x+1)' - \\left(\\tan^{-1}x \\right)'\n||]</marimo-tex><marimo-tex class=\"arithmatex\">||[\n= \\frac{2}{(2x+1)^2+1} - \\frac{1}{x^2+1}\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "e481f5c4943ff7a461faa59110628634",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Python\u306e\u4ee3\u6570\u8a08\u7b97\u30e9\u30a4\u30d6\u30e9\u30ea\u3001Sympy\u3067\u3082\u691c\u7b97\u3059\u308b\u3002</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "cb69d73f5c7c7c31b3acdcc2f73e2ea1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\n\\begin{aligned}\n\\frac{d}{dt}\\tan^{-1}t &amp;= \\frac{1}{1+t^2} \\\\\n\\tan^{-1}t &amp;= \\int \\frac{1}{1+t^2}\\,dt + C\n\\end{aligned}\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "0c511205dbc7127e6fdce99d8cdce5b9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\n\\left\\{\n\\begin{aligned}\n\\frac{d}{dt}\\tan^{-1}t &amp;= \\frac{1}{1+t^2} \\\\\n\\tan^{-1}t &amp;= \\int \\frac{1}{1+t^2}\\,dt + C\n\\end{aligned}\n\\right.\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "4d12cc02d68bcc6220bdcb16f3d6029e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "33895136321f28dbcabb9a21a6affff0",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "616315ab2f5566e08f3f58d0ff22dbdc",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "920bdd6a9c384e3d016276720cc7bcb8",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "4f1c973d223fb540599b4d7367156663",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "490a9f867d7fab7b2dd7c59f18c3e574",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "ada3f5ea164cebec55ee210d7c6cae82",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "3c82b45159e663dfbb17faea2a312568",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
