@@ -13,7 +13,7 @@ def _():
     return mo, np, plt
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     ### **超幾何分布**
@@ -28,6 +28,7 @@ def _(mo):
     $$
 
     は** 超幾何分布 **に従う。
+    超幾何分布の確率質量関数は、
 
     $$
     P(X=x) = \frac{\dbinom{K}{x}\dbinom{N-K}{n-x}}{\dbinom{N}{n}}
@@ -44,7 +45,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
     #### 定義域
@@ -58,12 +59,12 @@ def _(mo):
     * 抽出回数$n$
     * 抽出された成功の個数$x$
 
-    ## 右側の不等式
+    #### 右側の不等式
     $x \leq \min(n, K)$
     * 成功は**最大でも抽出回数$n$回まで**
-    * そもそも成功は**全体でK個**しかない
+    * そもそも成功は**全体で$K$個**しかない
 
-    ## 左側の不等式
+    #### 左側の不等式
     $x \geq \max(0, n-(N-K))$
     * 失敗（外れ）の個数$N-K$
     * 抽出回数$n$
@@ -106,7 +107,7 @@ def _(K_input, n_input):
     return K, n
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(K, N, n, xmax, xmin):
     # print(f"全体N:{N}, 成功K:{K}, 失敗N-K:{N-K}, 抽出回数:n:{n}")
     # check = n > N-K
@@ -206,6 +207,8 @@ def _(mo):
     mo.md(r"""
     ### 補足
     $\max(0, n-(N-K))$は、$0$と$n-(N-K)$のうち、**大きい方を返す**。
+
+    $\min(n, K)$は、$n$と$K$のうち、**小さい方を返す**。
     """)
     return
 
@@ -213,6 +216,39 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
+    ### 超幾何分布の期待値と分散
+
+    $$
+    E(X) = n \cdot \frac{K}{N}
+    $$
+
+    $$
+    V(X) = n \cdot \frac{K(N-K)}{N^2} \cdot \frac{N-n}{N-1}
+    $$
+
+    上記は**非復元抽出法**の場合の期待値と分散である。
+
+    **復元抽出法**の場合、成功確率$\dfrac{K}{N}$は一定のため、$p$と表すことが出来る。
+
+    よって
+
+    $$
+    \begin{aligned}
+    E(X) &= n p \\
+    V(X) &= n \cdot \frac{K}{N}\frac{(N-K)}{N} \cdot \frac{N-n}{N-1} \\
+    &= np(1-p)\cdot \frac{N-n}{N-1} \\
+    \end{aligned}
+    $$
+
+    $N$が無限に大きい場合、
+
+    $$
+    V(X) = np(1-p)\cdot \frac{1-\dfrac{n}{N}}{1-\dfrac{1}{N}} \xrightarrow{N\to\infty}  np(1-p)
+    $$
+
+    となり、二項分布の期待値と分散は等しくなる。
+    すなわち、非復元抽出法で$N$が無限に大きい場合、超幾何分布は二項分布に近似できる。
+
     ### 二項分布との対比
 
     |    | 超幾何分布 | 二項分布     |
