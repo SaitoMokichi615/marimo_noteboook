@@ -1,0 +1,146 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.18.4"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "58d0f8a35b1ddf2efb4ff8ea1a2c0a0b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "XlQQ",
+      "code_hash": "03b978ac442cefbbe222177d8421e11f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"_1\"><strong>\u9806\u5217\u306e\u7dcf\u6570</strong></h3>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(n||)</marimo-tex>\u500b\u306e\u8981\u7d20\u304b\u3089<marimo-tex class=\"arithmatex\">||(k||)</marimo-tex>\u500b\u9078\u3093\u3067\u4e26\u3079\u305f\u9806\u5217\u306e\u7dcf\u6570\u306f</span>\n<marimo-tex class=\"arithmatex\">||[ \n{}_nP_{k} = \\underbrace{n(n-1)(n-2)\\cdots(n-(k-1))}_{k\\text{\u500b}} \\tag{*}\n||]</marimo-tex><span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(n||)</marimo-tex> \u500b\u306e\u7570\u306a\u308b\u8981\u7d20\u304b\u3089 <marimo-tex class=\"arithmatex\">||(k||)</marimo-tex> \u500b\u3092\u9078\u3093\u3067\u4e26\u3079\u308b\u3068\u304d\u3001</span>\n<ul>\n<li>1 \u756a\u76ee\u306b\u7f6e\u304f\u8981\u7d20\u306f <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex> \u901a\u308a\u3001</li>\n<li>2 \u756a\u76ee\u306b\u7f6e\u304f\u8981\u7d20\u306f\u3059\u3067\u306b 1 \u500b\u4f7f\u3063\u3066\u3044\u308b\u305f\u3081 <marimo-tex class=\"arithmatex\">||(n-1||)</marimo-tex> \u901a\u308a\u3001</li>\n<li>\u540c\u69d8\u306b\u3001<marimo-tex class=\"arithmatex\">||(i||)</marimo-tex> \u756a\u76ee\u306b\u306f <marimo-tex class=\"arithmatex\">||(n-(i-1)||)</marimo-tex> \u901a\u308a\u306e\u9078\u3073\u65b9\u304c\u3042\u308b\u3002</li>\n</ul>\n<span class=\"paragraph\">\u3057\u305f\u304c\u3063\u3066\u3001\u5404\u6bb5\u968e\u306e\u9078\u3073\u65b9\u3092\u639b\u3051\u5408\u308f\u305b\u308b\u3053\u3068\u3067\u3001\n\u9806\u5217\u306e\u7dcf\u6570\u306f(*)\u3068\u8868\u3059\u3053\u3068\u304c\u51fa\u6765\u308b\u3002</span>\n<span class=\"paragraph\">\u307e\u305f(*)\u306f\u6b21\u306e\u3088\u3046\u306b\u66f8\u304f\u3053\u3068\u3082\u3067\u304d\u308b\u3002</span>\n<marimo-tex class=\"arithmatex\">||[\n\\begin{aligned}\n{}_nP_{k} &amp;= \\underbrace{n(n-1)(n-2)\\cdots (n-(k-1))\\Big(\\frac{(n-k)(n-(k+1))\\cdots 2\\cdot 1}{(n-k)(n-(k+1))\\cdots 2\\cdot 1}\\Big)}_{n\\text{\u500b}} \\\\\n&amp;= \\frac{n!}{(n-k)!}  \\tag{**} \\\\\n\\end{aligned}\n||]</marimo-tex></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "oUjf",
+      "code_hash": "3bf141a039313ff4866331a415846908",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"_1\"><strong>\u7d44\u307f\u5408\u308f\u305b\u306e\u7dcf\u6570\uff08\u4e8c\u9805\u4fc2\u6570\uff09</strong></h3>\n<span class=\"paragraph\">\u7570\u306a\u308b<marimo-tex class=\"arithmatex\">||(n||)</marimo-tex>\u304b\u3089<marimo-tex class=\"arithmatex\">||(k||)</marimo-tex>\u500b\u9078\u3093\u3060\u7d44\u307f\u5408\u308f\u305b\u306e\u7dcf\u6570\u306f\u3001\u6b21\u306e\u3088\u3046\u306b\u8868\u3059\u3053\u3068\u304c\u51fa\u6765\u308b\uff08<strong>\u4e8c\u9805\u4fc2\u6570</strong>\uff09\u3002</span>\n<marimo-tex class=\"arithmatex\">||[ \n\\dbinom{n}{k} = \\frac{{}_nP_k}{k!} = \\frac{n!}{k!(n-k)!}\n||]</marimo-tex><ul>\n<li><marimo-tex class=\"arithmatex\">||(n!||)</marimo-tex>:\u5168\u54e1\u3092\u9806\u756a\u306b\u4e26\u3079\u308b\u65b9\u6cd5</li>\n<li><marimo-tex class=\"arithmatex\">||(k!||)</marimo-tex>:\u9078\u3070\u308c\u305f\u5074\u306e\u9806\u756a\u306e\u91cd\u8907</li>\n<li>(n-k)!:\u9078\u3070\u308c\u306a\u304b\u3063\u305f\u5074\u306e\u9806\u756a\u306e\u91cd\u8907</li>\n</ul>\n<span class=\"paragraph\">\u9806\u5e8f\u306b\u610f\u5473\u306e\u306a\u3044\u90e8\u5206\u3092\u5168\u90e8\u5272\u308a\u7b97\u3067\u6d88\u3057\u3066\u3044\u308b\u3002</span>\n<span class=\"paragraph\">\u300c\u9806\u756a\u3092\u533a\u5225\u3057\u3066\u6570\u3048\u305f\u3082\u306e\u300d\u304b\u3089\u300c\u9806\u756a\u306e\u9055\u3044\u306b\u3088\u308b\u91cd\u8907\u300d\u3092\u5272\u308a\u7b97\u3067\u53d6\u308a\u9664\u3044\u305f\u7d50\u679c\u3067\u3042\u308b\u3002</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kvRZ",
+      "code_hash": "209e3c431a0a66abadf75d43f25dec0d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><!-- ###**\u9806\u5217\u30fb\u7d44\u307f\u5408\u308f\u305b**\n5\u3064\u306e\u30a2\u30eb\u30d5\u30a1\u30d9\u30c3\u30c8\u306e\u96c6\u5408$\\{a,b, c, d, e \\}$\u304b\u3089\u91cd\u8907\u306a\u3057\u3067\u7570\u306a\u308b3\u3064\u3092\u9078\u3093\u3067\u4e26\u3079\u308b\u3053\u3068\u3092\u8003\u3048\u308b\u3002\n$a$, $b$, $c$ \u306e3\u3064\u3092\u9078\u3093\u3067\u7d44\u307f\u5408\u308f\u305b\u308b\u4e26\u3079\u308b\u4e26\u3079\u65b9\u306f\u3001\n\n* $a\\rightarrow b \\rightarrow c$\n\n* $a\\rightarrow c \\rightarrow b$\n\n* $b\\rightarrow a \\rightarrow c$\n\n* $b\\rightarrow c \\rightarrow a$\n\n* $c\\rightarrow a \\rightarrow b$\n\n* $c\\rightarrow b \\rightarrow a$\n\n\u5168\u90e8\u3067$6$\u901a\u308a($3!$ = $3\\cdot 2 \\cdot 1$\u901a\u308a)\u3002\n\n\u3064\u307e\u308a\u3001**$a$, $b$, $c$ \u306e\u7d44\u307f\u5408\u308f\u305b\u306f$3!$\u901a\u308a\u306e\u91cd\u8907\u3059\u308b\u4e26\u3073\u9806\u304c\u3042\u308b**\u3002 --></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Mdil",
+      "code_hash": "64f77ba7f3215553e20779d0ff487b35",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Mdil-0' random-id='5d8cb125-a612-2bf8-f135-ad8002d7b2ac'><marimo-slider data-initial-value='3' data-label='&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert contents&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;\u53d6\u308a\u51fa\u3059\u6570:k&lt;/span&gt;&lt;/span&gt;&quot;' data-start='0' data-stop='5' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vcbQ",
+      "code_hash": "df47a8ceb4cf7d213d9273a6783faeff",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RxPI",
+      "code_hash": "b42cee3536fe0aecd2ac1d1268a65b32",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\u9806\u5217\u306e\u4f8b\uff08\u6700\u521d\u306e10\u500b\uff09:\n('a', 'b', 'c')\n('a', 'b', 'd')\n('a', 'b', 'e')\n('a', 'c', 'b')\n('a', 'c', 'd')\n('a', 'c', 'e')\n('a', 'd', 'b')\n('a', 'd', 'c')\n('a', 'd', 'e')\n('a', 'e', 'b')\n\u9806\u5217\u306e\u7dcf\u6570: 60\n\u9806\u5217\u5185\u306e\u540c\u4e00\u306e\u7d44\u307f\u5408\u308f\u305b\u30d1\u30bf\u30fc\u30f3\u3092\u3001\u91cd\u8907\u3057\u30663!=6\u56de\u30ab\u30a6\u30f3\u30c8\u3057\u3066\u3044\u308b\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "UNTC",
+      "code_hash": "e3e9bdeb14cdbb90f54bb490eabf4e30",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n\u7d44\u307f\u5408\u308f\u305b\u306e\u4f8b:\n('a', 'b', 'c')\n('a', 'b', 'd')\n('a', 'b', 'e')\n('a', 'c', 'd')\n('a', 'c', 'e')\n('a', 'd', 'e')\n('b', 'c', 'd')\n('b', 'c', 'e')\n('b', 'd', 'e')\n('c', 'd', 'e')\n\u7d44\u307f\u5408\u308f\u305b\u306e\u7dcf\u6570: 10\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "Nove",
+      "code_hash": "da964a7ea2bdade75bc7df6e388fcd34",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n\u9806\u5217\u304b\u3089\u91cd\u8907\u9664\u53bb\u3057\u305f\u7d50\u679c:\n('a', 'd', 'e')\n('b', 'd', 'e')\n('c', 'd', 'e')\n('a', 'c', 'd')\n('a', 'c', 'e')\n('b', 'c', 'd')\n('b', 'c', 'e')\n('a', 'b', 'd')\n('a', 'b', 'e')\n('a', 'b', 'c')\n\u91cd\u8907\u9664\u53bb\u5f8c\u306e\u6570: 10\n\u9806\u5217\u306e\u7dcf\u6570\u3092\u7d44\u307f\u5408\u308f\u305b\u306e\u7dcf\u6570\u3067\u5272\u3063\u305f\u6570:10.0\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    }
+  ]
+}
