@@ -5,19 +5,6 @@
   },
   "cells": [
     {
-      "id": "Hbol",
-      "code_hash": "da1dd05fa28723937a0d0d953e3092ba",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "MJUe",
       "code_hash": "6b46e4084376d5f20abb34ea50c81767",
       "outputs": [
@@ -57,16 +44,15 @@
       "console": []
     },
     {
+      "id": "Hbol",
+      "code_hash": "0f55254538b458da176545885b69e568",
+      "outputs": [],
+      "console": []
+    },
+    {
       "id": "lEQa",
       "code_hash": "cc6d58d8aaddb927427b3b3df3cbbf55",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert contents\"><marimo-tex class=\"arithmatex\">||[\\frac{1}{6}||]</marimo-tex></span>"
-          }
-        }
-      ],
+      "outputs": [],
       "console": []
     }
   ]
