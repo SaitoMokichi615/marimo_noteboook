@@ -179,20 +179,19 @@ def _(comb, np, plt):
 
     # 描画
     plt.bar(X, prob, width=8)
-    # plt.axvline(
-    #     EX,
-    #     linewidth=3,      # 線を太く
-    #     color="red",      # 赤色
-    #     linestyle="--",   # 破線（好みで）
-    #     label=f"期待値 E(X) = {EX:.2f}"
-    # )
+    plt.axvline(
+        EX,
+        linewidth=3,      # 線を太く
+        color="red",      # 赤色
+        linestyle="--",   # 破線（好みで）
+        label=f"期待値 E(X) = {EX:.2f}"
+    )
 
     plt.xlabel("収支 X（円）")
     plt.ylabel("確率")
     plt.title("ゲームの収支の確率分布")
     # plt.legend()          # ラベル表示
     plt.show()
-
 
     return
 
