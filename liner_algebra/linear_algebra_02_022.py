@@ -1185,7 +1185,215 @@ def _(Matrix, np, plt):
 
 
 @app.cell
-def _():
+def _(mo):
+    mo.md(r"""
+    ### **問題22-4**
+    写像$T:\mathbb{R^3}\rightarrow\mathbb{R^2}$を次のように定義する
+
+    $$
+    T\left(\begin{bmatrix}x\\ y\\ z\end{bmatrix}\right) = \begin{bmatrix}x\\ y\end{bmatrix}
+    $$
+
+    (1)$T$は線形写像であることを示せ。
+
+    (2)像$\text{Im}(T)$の1組の基底と階数$\text{rank}(T)$を求めよ。
+
+    (3)核$\text{Ker}(T)$の1組の基底と階数$\text{null}(T)$を求めよ。
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    (1)
+
+    $$
+    \boldsymbol{w} = \begin{bmatrix}x \\ y \\ z\end{bmatrix}, \quad \boldsymbol{w'} = \begin{bmatrix}x' \\ y' \\ z'\end{bmatrix}
+    $$
+
+    と、任意の$\alpha, \beta \in \mathbb{R}$について、
+
+    $$
+    T(\alpha \boldsymbol{w} + \beta \boldsymbol{w'}) = \alpha T(\boldsymbol{w}) + \beta T(\boldsymbol{w'})
+    $$
+
+    が成立すれば、$T$は線形写像である。
+
+    $$
+    \begin{aligned}
+    T\left(\alpha \begin{bmatrix}x \\ y \\ z\end{bmatrix} + \beta \begin{bmatrix}x' \\ y' \\ z'\end{bmatrix}\right) &= T\left(\begin{bmatrix}\alpha x + \beta x' \\ \alpha y + \beta y'\\ \alpha z + \beta z'  \end{bmatrix}\right) \\
+    &=\begin{bmatrix}\alpha x + \beta x' \\ \alpha y + \beta y' \end{bmatrix} \\
+    &= \alpha\begin{bmatrix} x  \\ y \end{bmatrix} + \beta \begin{bmatrix} x'  \\ y' \end{bmatrix} \\
+    &=\alpha T(\boldsymbol{w}) + \beta T(\boldsymbol{w'})
+    \end{aligned}
+    $$
+
+    よって、$T$は線形写像である。$\;\square$
+
+    ---
+
+    (2)
+
+    $$
+    \begin{aligned}
+    \text{Im}(T) &= \left\{ T\left(\begin{bmatrix}x \\ y \\ z\end{bmatrix}\right) \;\Big| x,y,z \in \mathbb{R}  \right\}\\
+     &= \left\{ \begin{bmatrix}x \\ y \end{bmatrix} \;\Big| x,y \in \mathbb{R} \right\}\\
+     &= \left\{ x\begin{bmatrix}1 \\ 0 \end{bmatrix} + y\begin{bmatrix}0 \\ 1 \end{bmatrix} \;\Big| x,y \in \mathbb{R} \right\}
+    \end{aligned}
+    $$
+
+    これより、$\text{Im}(T)$の任意の元は、
+
+    $$
+    \boldsymbol{e_1} = \begin{bmatrix}1 \\ 0 \end{bmatrix}, \quad
+    \boldsymbol{e_2} = \begin{bmatrix}0 \\ 1 \end{bmatrix},
+    $$
+
+    の一次結合で表すことが出来る。
+
+    また、$\boldsymbol{e_1}$と$\boldsymbol{e_2}$は一次独立であるから、$\left\{\boldsymbol{e_1}, \boldsymbol{e_2} \right\}$は$\text{Im}(T)$の基底である。
+
+    したがって、$\text{rank}(T) = \dim(\text{Im}(T)) = 2 \;\square$
+
+    ---
+
+    (3)
+
+
+    $$
+    \begin{aligned}
+    \text{Ker}(T) &= \left\{ \begin{bmatrix}x \\ y \\ z\end{bmatrix} \in \mathbb{R^3} \;\Big| T\left(\begin{bmatrix}x \\ y \\ z\end{bmatrix}\right) =  \mathbb{O} \right\}\\
+     &= \left\{  x\begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix} + y\begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix} + z\begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}\;\Big| \begin{bmatrix}x \\ y \end{bmatrix} = \begin{bmatrix}0 \\ 0 \end{bmatrix} \right\}\\
+    &= \left\{ z\begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}\;\Big| z \in \mathbb{R}  \right\}\\
+    \end{aligned}
+    $$
+
+    <!-- $$
+    簡潔解答
+    \text{Ker}(T)
+    = \left\{
+    \begin{bmatrix}x \\ y \\ z\end{bmatrix}
+    \in \mathbb{R}^3 \mid x=0,\; y=0
+    \right\}
+    = \left\{ z\begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix} \mid z\in\mathbb{R} \right\}
+    $$ -->
+
+    これより、$\text{Ker}(T)$の任意の元は
+
+    $$
+    \boldsymbol{u} = \begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}
+    $$
+
+    の一次結合で表すことが出来る。
+
+    また、非零ベクトルである1つのベクトルは一次独立である。
+
+    よって、$\{ \boldsymbol{u} \}$は$\text{Ker}(T)$の基底である。
+
+    したがって、$\text{null}(T) =  \dim(\text{Ker}(T)) = 1 \; \square$
+
+    ---
+    ### 補足
+
+    次元公式より
+
+    $$
+    \dim{\mathbb{R^3}} = \text{rank}(T)  = \text{null}(T) = 1 + 2 = 3
+    $$
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ### **問題22-5**
+    写像$T:\mathbb{R}[x]_2 \rightarrow \mathbb{R}[x]_2$を次のように定義する。
+
+    $$
+    T\left(f(x)\right) = f'(x) + f(x)
+    $$
+
+    (1)$T$は線形写像であることを示せ。
+
+    (2)像$\text{Im}(T)$の1組の基底と階数$\text{rank}(T)$を求めよ。
+
+    (3)核$\text{Ker}(T)$の1組の基底と退化次数$\text{null}(T)$を求めよ。
+
+    ---
+
+    (1)
+    任意の$f(x), g(x) \in \mathbb{R}[x]_2$、$\alpha, \beta \in \mathbb{R}$について
+
+    $$
+    \begin{aligned}
+    T\left(\alpha f(x) + \beta g(x)\right) &= \left(\alpha f(x) + \beta g(x)\right) + \left(\alpha f(x) + \beta g(x)\right)' \\
+    &= \alpha f(x) + \beta g(x) + \alpha f'(x) + \beta g'(x) \\
+    &= \alpha \left(f(x) + f'(x) \right) + \beta \left(g(x) + g'(x)\right) \\
+    &= \alpha T\left(f(x)\right) + \beta T\left(g(x)\right)
+    \end{aligned}
+    $$
+
+    であるから、$T$は線形写像である。 $\square$
+
+
+    ---
+    (2)
+    $f(x) = a_x^2 + b_x + c \;(a, b, c \in \mathbb{R})$とすると、
+
+
+    $$
+    \begin{aligned}
+    \text{Im}(T) &= \left\{ T(f(x)) \; | \; x \in \mathbb{R} \right\}\\
+    &= \left\{ f'(x) + f(x) \; | \; x \in \mathbb{R} \right\} \\
+    &= \left\{ ax^2 + (2a + b) x + (b + c) \; | \; x \in \mathbb{R} \right\}
+    \end{aligned}
+    $$
+
+    これより、$\text{Im}(T) $の任意の元は、$x^2, x, 1$で表すことが出来る。
+
+    また、$k_0 + k_1x + k_2x^2 = 0$とすると、
+
+    この恒等式を満たすには必ず$k_0 = k_1 = k_2 = 0$である必要がある。ゆえに$x^2, x, 1$は一次独立である。
+
+    よって、$\{x^2, x, 1\}$は$\text{Im}(T)$の基底であり、
+
+    $\text{rank}(T) = \dim{\left(\text{Im}(T)\right)} = 3 \;\square$
+
+    ---
+    (3)
+
+    $$
+    \begin{aligned}
+    \text{Ker}(T) &= \left\{ f(x) \in \mathbb{R}[x]_2  \; | \; T(f(x)) = 0 \right\}\\
+    &=\left\{ f(x) \in \mathbb{R}[x]_2  \; | \; f'(x) + f(x) = 0 \right\}\\
+    \left\{ ax^2 + bx + c \in \mathbb{R}[x]_2  \; | \; ax^2 + (2a + b) x + (b + c) = 0 \right\}\\
+    \end{aligned}
+    $$
+
+    $ax^2 + (2a + b) x + (b + c) = 0$より、
+
+    $$
+    \begin{cases}
+    a = 0 \\
+    2a + b = 0 \\
+    b + c = 0
+    \end{cases}
+    $$
+
+    これより、$a=b=c=0$
+
+    よって、$\text{Ker}(T) = {0}$
+
+    したがって、${0}$が$\text{Ker}(T)$の基底であり、
+
+    $\text{null}(T) = \dim{\left(\text{Ker}(T)\right)} = 0 \;\square$
+
+    ---
+    ####補足
+    零ベクトル空間の次元は0
+    """)
     return
 
 
