@@ -7,7 +7,10 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
-    return (mo,)
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from math import comb
+    return comb, mo, np, plt
 
 
 @app.cell(hide_code=True)
@@ -177,6 +180,32 @@ def _(mo):
     (n-k)! = 37! = 37(36!) =
     (n-k-1)! = 36! -->
     """)
+    return
+
+
+@app.cell
+def _(comb, np, plt):
+    # パラメータ
+    n = 40
+    p = 1 / 7
+
+    # k の範囲
+    k = np.arange(0, n + 1)
+
+    # 二項分布の確率
+    prob = np.array([
+        comb(n, ki) * (p ** ki) * ((1 - p) ** (n - ki))
+        for ki in k
+    ])
+
+    # プロット
+    plt.figure()
+    plt.bar(k, prob)
+    plt.xlabel("k (number of white balls)")
+    plt.ylabel("P(X = k)")
+    plt.title("Binomial Distribution: Bin(40, 1/7)")
+    plt.show()
+
     return
 
 
