@@ -113,7 +113,7 @@ def _(mo):
     return (n_input,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(comb, n_input, np, plt):
     # パラメータ
     n = n_input.value          # 試行回数（必要に応じて変更）
@@ -136,7 +136,6 @@ def _(comb, n_input, np, plt):
     plt.title(f"Binomial Distribution: n={n}, p={p}")
     plt.xticks(k)
     plt.show()
-
     return
 
 
