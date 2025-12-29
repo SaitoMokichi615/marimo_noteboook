@@ -10,7 +10,10 @@ def _():
     import numpy as np
     import random
     import matplotlib.pyplot as plt
-    return mo, np, plt, random
+    from matplotlib.animation import FuncAnimation
+    plt.rcParams["font.family"] = "Meiryo" 
+    plt.rcParams["animation.html"] = "jshtml"
+    return FuncAnimation, mo, np, plt, random
 
 
 @app.cell
@@ -412,7 +415,6 @@ def _(np):
 
     # #     P[0, 0] = 1
     # #     return P
-
     return (transition_matrix,)
 
 
@@ -432,7 +434,6 @@ def _():
 
     # print(pi)
     # print(pi[a])
-
 
     return
 
@@ -456,7 +457,6 @@ def _(random):
                     results.append(count)
                     break
         return results
-
     return
 
 
@@ -486,7 +486,6 @@ def _(random):
             if not hit:
                 results.append(None)  # 最後まで当たらない
         return results
-
     return
 
 
@@ -501,7 +500,6 @@ def _(np):
 
         probs = [k/(k+b) for k in range(a+1)]
         return np.dot(pi, probs)
-
     return (prob_hit_at_n,)
 
 
@@ -544,8 +542,44 @@ def _(plt, state_distributions, transition_matrix):
     plt.ylabel("probability")
     plt.legend()
     plt.show()
-
     return P, a, b
+
+
+@app.cell
+def _(P, np):
+    steps = 40
+    pi = np.zeros((steps, 6))
+    pi[0,5] = 1  # 初期状態 S5
+
+    for t in range(1, steps):
+        pi[t] = pi[t-1] @ P
+    return pi, steps
+
+
+@app.cell
+def _(FuncAnimation, pi, plt, steps):
+    fig, ax = plt.subplots()
+    states = ['S5','S4','S3','S2','S1','S0']
+    # pi[0,5] = 1  # 初期状態 S0
+
+    bars = ax.bar(states, pi[0])
+    ax.set_ylim(0,1)
+    ax.set_ylabel("確率")
+
+    def update(frame):
+        for bar, h in zip(bars, pi[frame]):
+            bar.set_height(h)
+        ax.set_title(f"試行回数 {frame}")
+        return bars
+
+    ani = FuncAnimation(fig, update, frames=steps, interval=100)
+    ani
+
+
+    # ani.to_jshtml()
+
+    # plt.show()
+    return
 
 
 @app.function
@@ -563,7 +597,6 @@ def _():
     #         prob_hit_at_n(P, a, b, n),
     #         geometric(p0, n)
     #     )
-
     return
 
 
@@ -590,7 +623,6 @@ def _(np):
                     P[idx, state_index(k, l-1, b)] = l / (k + l)
 
         return P
-
     return
 
 
