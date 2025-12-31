@@ -213,11 +213,11 @@ def _(mo):
     $$
     \begin{aligned}
     & \frac{N}{N_{\infty} - N} = \frac{e^{kt}}{A}\\\\
-    \rightarrow &\frac{N_{\infty} - N}{N} = \frac{A}{e^{kt}}\\\\
-    \rightarrow &\frac{N_{\infty}}{N} - 1 = \frac{A}{e^{kt}}\\\\
-    \rightarrow &\frac{N_{\infty}}{N} =  1 + \frac{A}{e^{kt}} = \frac{e^{kt} + A}{e^{kt}}\\\\
-    \rightarrow &\frac{N}{N_{\infty}} =   \frac{e^{kt}}{e^{kt} + A}\\\\
-    \rightarrow &N = \frac{e^{kt}}{e^{kt} + A}N_{\infty}=  \frac{N_{\infty}}{1 + \dfrac{A}{e^{kt}}}\\
+    \Rightarrow &\frac{N_{\infty} - N}{N} = \frac{A}{e^{kt}}\\\\
+    \Rightarrow &\frac{N_{\infty}}{N} - 1 = \frac{A}{e^{kt}}\\\\
+    \Rightarrow &\frac{N_{\infty}}{N} =  1 + \frac{A}{e^{kt}} = \frac{e^{kt} + A}{e^{kt}}\\\\
+    \Rightarrow &\frac{N}{N_{\infty}} =   \frac{e^{kt}}{e^{kt} + A}\\\\
+    \Rightarrow &N = \frac{e^{kt}}{e^{kt} + A}N_{\infty}=  \frac{N_{\infty}}{1 + \dfrac{A}{e^{kt}}}\\
     \end{aligned}
     $$
 
@@ -231,6 +231,81 @@ def _(mo):
 
 
     <!-- N10 = N_inf / (1 + (1/A) * sp.exp(-k_val*10)) -->
+    """)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""
+    ---
+    ### 数値を使って$k$を決める
+
+    基準年を **2000年($t=0$)** とする。
+
+    #### 与条件
+
+    * $N_\infty = 1.3\times10^8$
+    * $N(0)=N_0 = 1.23\times10^8$
+    * $N(5)=1.25\times10^8$
+
+    ---
+
+    #### 定数 $A$を求める
+
+    $$
+    A=\frac{N_\infty-N_0}{N_0}
+    = \frac{1.30-1.23}{1.23}
+    \approx 0.0569
+    $$
+
+    ---
+
+    ####$t=5$を代入
+
+    $$
+    \frac{N(5)}{N_\infty}
+    = \frac{1}{1+Ae^{-5k}}
+    $$
+
+    $$
+    \frac{1.25}{1.30} \approx 0.9615
+    \Rightarrow 1+Ae^{-5k} \approx 1.04
+    $$
+
+    $$
+    Ae^{-5k} \approx 0.04
+    \Rightarrow e^{-5k}\approx \frac{0.04}{0.0569}\approx 0.70
+    $$
+
+    $$
+    -5k=\ln(0.70)\approx -0.35
+    \Rightarrow k\approx 0.070
+    $$
+
+    ---
+
+    ### 2010年（$t=10$）の人口予測
+
+    $$
+    e^{-10k}=e^{-0.70}\approx 0.49
+    $$
+
+    $$
+    N(10)=\frac{1.3\times10^8}{1+0.0569\times0.49}
+    \approx \frac{1.3\times10^8}{1.028}
+    \approx 1.26\times10^8
+    $$
+
+    ---
+
+    #### 最終結果
+
+    $$
+    \boxed{
+    \text{2010年の人口 } \approx 1.26\times10^8 \text{ 人}
+    }
+    $$
     """)
     return
 
@@ -258,7 +333,6 @@ def _(sp):
     # k を解く
     k_val = sp.solve(eq, k)[0]
     k_val.evalf(3)
-
     return A, N0, N_inf, k_val
 
 
@@ -306,7 +380,6 @@ def _(N0, N_inf, k_val, np, plt):
     # plt.axhline(N_inf, linestyle=":", label="Carrying capacity")
     # plt.legend()
     # plt.show()
-
     return N, k_, t_
 
 
@@ -360,7 +433,6 @@ def _(N, N_inf, np, plt, t_):
     plt.ylabel("log(N / (N_inf - N))")
     plt.title("Linearized logistic equation")
     plt.show()
-
     return
 
 
@@ -445,7 +517,6 @@ def _(N_inf, k_, np, plt):
     plt.title('Phase line of the logistic equation')
     plt.tight_layout()
     plt.show()
-
     return
 
 
